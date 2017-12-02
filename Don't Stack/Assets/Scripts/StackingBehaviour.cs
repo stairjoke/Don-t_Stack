@@ -63,6 +63,7 @@ namespace gameJam
             if (!hasStacked)
             {
                 Camera.main.GetComponent<Score>().updateScore(50);
+                GetComponent<AudioSource>().Play();
             }
             hasStacked = true;
         }
