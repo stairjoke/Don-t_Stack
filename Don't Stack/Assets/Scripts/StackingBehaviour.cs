@@ -46,7 +46,6 @@ namespace gameJam
             }
         }
         private void apfelCollision() {
-            Debug.Log("Apfel");
             if(!hasStacked){
                 GetComponent<AudioSource>().Play();
                 body.GetComponent<Animator>().SetBool("bounce", true);
@@ -59,7 +58,6 @@ namespace gameJam
             }
         }
         private void erdbeereCollision() {
-            Debug.Log("Erdbeere");
             if (!hasStacked)
             {
                 Camera.main.GetComponent<Score>().updateScore(50);
@@ -73,7 +71,6 @@ namespace gameJam
             AudioSource.PlayClipAtPoint(audio, transform.position);
         }
         private void marshmallowCollision() {
-            Debug.Log("Marshmallow");
             if (!hasStacked)
             {
                 if (Random.value > 0.5){
@@ -89,7 +86,6 @@ namespace gameJam
         }
         private void wurstCollision()
         {
-            Debug.Log("Wurst");
             if (!hasStacked)
             {
                 body.GetComponent<Animator>().SetBool("splash", true);
@@ -100,7 +96,6 @@ namespace gameJam
         }
         private void chickenCollision()
         {
-            Debug.Log("Chicken");
             if (!hasStacked)
             {
                 body.GetComponent<Animator>().SetBool("break", true);

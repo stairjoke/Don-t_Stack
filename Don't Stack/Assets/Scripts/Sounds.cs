@@ -6,14 +6,13 @@ public class Sounds : MonoBehaviour {
 
     public Transform playAudio;
     public Transform scoreAudio;
-
-    public void Start(){
-        scoreAudio.GetComponent<AudioSource>().Pause();
-        scoreAudio.GetComponent<AudioSource>().mute = false;;
-    }
+    private bool called = false;
 
     public void score(){
-        playAudio.GetComponent<AudioSource>().Stop();
-        scoreAudio.GetComponent<AudioSource>().Play();
+        if(!called){
+            playAudio.GetComponent<AudioSource>().Stop();
+            scoreAudio.GetComponent<AudioSource>().Play();
+            called = true;
+        }
     }
 }

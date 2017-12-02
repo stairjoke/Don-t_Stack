@@ -30,9 +30,9 @@ public class Countdown : MonoBehaviour {
         levelTimeInSeconds -= Time.smoothDeltaTime;
         if (levelTimeInSeconds <= 1)
         {
+            soundsEmpty.GetComponent<Sounds>().score();
             Time.timeScale = 0;
             replayCanvas.GetComponent<Canvas>().enabled = true;
-            soundsEmpty.GetComponent<Sounds>().score();
         }
         timer.text = Mathf.Floor(levelTimeInSeconds).ToString() + "s";
         if (runningOutStep > 0f){
