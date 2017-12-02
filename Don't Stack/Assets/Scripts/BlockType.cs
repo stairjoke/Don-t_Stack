@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BlockType : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public enum blockTypes {
+        Erdbeere, Marshmallow, Apfel, Wurst, Stein, Feder
+    }
+
+    public blockTypes myType;
+
+    public blockTypes type(){
+        return myType;
+    }
+
 }
