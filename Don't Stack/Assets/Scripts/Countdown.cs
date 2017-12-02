@@ -6,8 +6,20 @@ using UnityEngine.UI;
 public class Countdown : MonoBehaviour {
 
     public float levelTimeInSeconds = 45f;
+    public Canvas replayCanvas;
     public Text timer;
+    public Color runningOutOfTimeColor;
+    public float runningOutStep = 10f;
+    public Font runningOutFont;
+    public ParticleSystem reminder;
 	
+    void Start(){
+        Time.timeScale = 1;
+        if(reminder != null){
+            reminder.Pause();
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
         UpdateTimer();
@@ -18,9 +30,22 @@ public class Countdown : MonoBehaviour {
         if (levelTimeInSeconds <= 1)
         {
             Time.timeScale = 0;
-            //show score
+            replayCanvas.GetComponent<Canvas>().enabled = true;
         }
         timer.text = Mathf.Floor(levelTimeInSeconds).ToString() + "s";
+        if (runningOutStep > 0f){
+            if(reminder != null && levelTimeInSeconds <= (runningOutStep + 1 + 1)){
+                reminder.Play();
+            }
+            if (levelTimeInSeconds <= runningOutStep + 1f)
+            {
+                timer.color = runningOutOfTimeColor;
+                if (runningOutFont != null)
+                {
+                    timer.font = runningOutFont;
+                }
+            }
+        }
     }
 
 }

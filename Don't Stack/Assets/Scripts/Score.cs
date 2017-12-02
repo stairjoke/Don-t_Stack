@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    public Text scoreText;
+    public Text[] scoreText;
     private int score = 0;
 
     public void updateScore(int d){
         score += d;
-        scoreText.text = score.ToString();
+        for (var i = 0; i < scoreText.Length; i++){
+            scoreText[i].text = score.ToString();
+        }
     }
 }

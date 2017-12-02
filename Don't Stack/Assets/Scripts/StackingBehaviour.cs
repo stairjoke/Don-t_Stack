@@ -101,6 +101,7 @@ namespace gameJam
             {
                 body.GetComponent<Animator>().SetBool("break", true);
                 Camera.main.GetComponent<Score>().updateScore(50);
+                GetComponent<AudioSource>().Play();
                 hasStacked = true;
             }
         }
