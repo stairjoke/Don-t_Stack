@@ -131,7 +131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6ea677859490141739fd3aacf4b49498, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 4466959667244934}
+  marshmallowExtraSound: {fileID: 0}
 --- !u!212 &212100105107280698
 SpriteRenderer:
   m_ObjectHideFlags: 1

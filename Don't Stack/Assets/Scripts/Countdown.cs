@@ -12,6 +12,7 @@ public class Countdown : MonoBehaviour {
     public float runningOutStep = 10f;
     public Font runningOutFont;
     public ParticleSystem reminder;
+    public Transform soundsEmpty;
 	
     void Start(){
         Time.timeScale = 1;
@@ -31,6 +32,7 @@ public class Countdown : MonoBehaviour {
         {
             Time.timeScale = 0;
             replayCanvas.GetComponent<Canvas>().enabled = true;
+            soundsEmpty.GetComponent<Sounds>().score();
         }
         timer.text = Mathf.Floor(levelTimeInSeconds).ToString() + "s";
         if (runningOutStep > 0f){

@@ -7,8 +7,8 @@ namespace gameJam
     public class StackingBehaviour : MonoBehaviour
     {
         public Transform body;
+        public AudioClip marshmallowExtraSound;
         private bool hasStacked = false;
-
 
         void Start()
         {
@@ -68,9 +68,9 @@ namespace gameJam
             hasStacked = true;
         }
 
-        private IEnumerator playAudioSource(){
+        private IEnumerator playAudioClip(AudioClip audio){
             yield return new WaitForSeconds(1.7f);
-            GetComponent<AudioSource>().Play();
+            AudioSource.PlayClipAtPoint(audio, transform.position);
         }
         private void marshmallowCollision() {
             Debug.Log("Marshmallow");
@@ -79,8 +79,9 @@ namespace gameJam
                 if (Random.value > 0.5){
                     body.GetComponent<Animator>().SetBool("smash", true);
                     Camera.main.GetComponent<Score>().updateScore(50);
-                    StartCoroutine(playAudioSource());
+                    StartCoroutine(playAudioClip(marshmallowExtraSound));
                 }else{
+                    GetComponent<AudioSource>().Play();
                     Camera.main.GetComponent<Score>().updateScore(150);
                 }
                 hasStacked = true;
