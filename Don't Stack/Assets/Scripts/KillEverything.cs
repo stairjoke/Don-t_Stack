@@ -9,6 +9,7 @@ public class KillEverything : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         AudioSource.PlayClipAtPoint(missed[Random.Range(0, missed.Length)], other.transform.position);
+        Camera.main.GetComponent<Score>().updateScore(-50);
         StartCoroutine(kill(other.gameObject));
     }
 

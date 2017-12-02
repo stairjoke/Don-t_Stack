@@ -15,12 +15,12 @@ public class Countdown : MonoBehaviour {
 
     private void UpdateTimer(){
         levelTimeInSeconds -= Time.smoothDeltaTime;
-        if (levelTimeInSeconds <= 0)
+        if (levelTimeInSeconds <= 1)
         {
             Time.timeScale = 0;
             //show score
         }
-        timer.text = Mathf.Floor(levelTimeInSeconds).ToString();
+        timer.text = Mathf.Floor(levelTimeInSeconds).ToString() + "s";
     }
 
 }
