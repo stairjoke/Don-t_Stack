@@ -5,7 +5,7 @@ namespace gameJam
 {
     public enum blockTypes
     {
-        undefined, Erdbeere, Marshmallow, Apfel, Wurst
+        undefined, Erdbeere, Marshmallow, Apfel, Wurst, Chicken
     }
     public class Type : MonoBehaviour
     {

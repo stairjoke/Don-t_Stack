@@ -32,6 +32,9 @@ namespace gameJam
                 case blockTypes.Wurst:
                     wurstCollision();
                     break;
+                case blockTypes.Chicken:
+                    chickenCollision();
+                    break;
             }
         }
 
@@ -52,19 +55,37 @@ namespace gameJam
 
             hasStacked = true;
         }
+
+        private IEnumerator playAudioSource(){
+            yield return new WaitForSeconds(1.7f);
+            GetComponent<AudioSource>().Play();
+        }
         private void marshmallowCollision() {
             Debug.Log("Marshmallow");
             if (!hasStacked)
             {
-                body.GetComponent<Animator>().SetBool("smash", true);
+                if (Random.value > 0.5){
+                    body.GetComponent<Animator>().SetBool("smash", true);
+                    StartCoroutine(playAudioSource());
+                }
                 hasStacked = true;
             }
         }
         private void wurstCollision()
         {
             Debug.Log("Wurst");
-            if(!hasStacked){
+            if (!hasStacked)
+            {
                 body.GetComponent<Animator>().SetBool("splash", true);
+                hasStacked = true;
+            }
+        }
+        private void chickenCollision()
+        {
+            Debug.Log("Chicken");
+            if (!hasStacked)
+            {
+                body.GetComponent<Animator>().SetBool("break", true);
                 hasStacked = true;
             }
         }
