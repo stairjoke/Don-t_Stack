@@ -1,4 +1,4 @@
-OSXStandalone
+WindowsStandalone
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
@@ -139,3 +139,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadGame
 5827f67672a8d850fdbeaf13dddc9782 Assembly-CSharp.dll:.Sounds
 48a13b9b5cb16fed3f7e0c594f17327b Assembly-CSharp.dll:.Credits
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Exit
